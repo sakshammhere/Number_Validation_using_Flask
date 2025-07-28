@@ -55,35 +55,21 @@
       </form>
       <br>
     </div>
+
     <div class="container">
       <h3> PHONE NUMBER REPORT </h3>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Priority</th>
-            <th scope="col">Intermediate</th>
-            <th scope="col">Less Priority</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>P1</td>
-            <td>I1</td>
-            <td>L1</td>
-          </tr>
-          <tr>
-            <td>P2</td>
-            <td>I2</td>
-            <td>L2</td>
-          </tr>
-          <tr>
-            <td>P3</td>
-            <td>I3</td>
-            <td>L3</td>
-          </tr>
-        </tbody>
-      </table>
+
+      {% if result %}
+        <div class="card p-3 mt-3">
+          <p><strong>Phone Number:</strong> {{ result.phone_number }}</p>
+          <p><strong>Validity:</strong> {{ result.is_valid }}</p>
+          <p><strong>Country:</strong> {{ result.country_name or "N/A" }}</p>
+          <p><strong>Carrier:</strong> {{ result.carrier or "N/A" }}</p>
+          <p><strong>Line Type:</strong> {{ result.line_type or "N/A" }}</p>
+        </div>
+      {% endif %}
     </div>
+
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
