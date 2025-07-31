@@ -23,7 +23,12 @@ class Number_validation(db.Model): #table/schema name is Number_validation
 
     def __repr__(self):
         return f'<Number {self.phone_number} - Valid: {self.Validity}>'  #for debugging purposes
-
+@app.route("/contact-us")
+def contact_us():
+    return render_template("contact_us.html")
+@app.route("/about")
+def about():
+    return render_template("about.html")
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
     result = None
